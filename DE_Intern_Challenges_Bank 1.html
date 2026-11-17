@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Engineer Intern Task Bank</title>
+<style>
+:root {
+  --bg: #ffffff; --text: #1a1a1a; --muted: #6b6b6b; --rule: #e6e6e6; --soft: #f5f5f4;
+  --accent: #2557d6; --ok: #1f7a4d; --bad: #b3261e;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141414; --text: #e8e8e6; --muted: #9a9a96; --rule: #2e2e2c; --soft: #1e1e1d;
+    --accent: #8aa8ff; --ok: #6fcf9c; --bad: #f2a29a;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141414; --text: #e8e8e6; --muted: #9a9a96; --rule: #2e2e2c; --soft: #1e1e1d;
+  --accent: #8aa8ff; --ok: #6fcf9c; --bad: #f2a29a;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.87em; }
+code { background: var(--soft); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+pre { background: var(--soft); padding: 14px 16px; border-radius: 6px; overflow-x: auto; line-height: 1.45; }
+pre code { background: none; padding: 0; }
+.layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); max-width: 1180px; margin: 0 auto; }
+nav.toc { position: sticky; top: 0; align-self: start; height: 100vh; overflow-y: auto; padding: 40px 24px; }
+nav.toc .brand { font-weight: 600; margin-bottom: 16px; }
+nav.toc ol { list-style: none; margin: 0; padding: 0; }
+nav.toc li a { display: block; padding: 5px 0; color: var(--muted); font-size: 14px; }
+nav.toc li a:hover { color: var(--text); text-decoration: none; }
+nav.toc .num { display: inline-block; width: 22px; font-variant-numeric: tabular-nums; }
+main { padding: 40px 48px 96px; min-width: 0; max-width: 860px; }
+header.hero h1 { font-size: 32px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.015em; }
+header.hero p { color: var(--muted); margin: 0 0 8px; }
+section.stage { padding-top: 56px; margin-top: 56px; border-top: 1px solid var(--rule); }
+.eyebrow { font-size: 13px; color: var(--muted); }
+.eyebrow b { color: var(--text); font-weight: 600; }
+.stage h2 { font-size: 26px; line-height: 1.25; margin: 6px 0 16px; letter-spacing: -0.01em; }
+.stage h3 { font-size: 18px; margin: 36px 0 8px; }
+.stage h4 { font-size: 16px; margin: 24px 0 6px; }
+.meta { color: var(--muted); font-size: 14px; }
+.note { background: var(--soft); padding: 12px 16px; border-radius: 6px; margin: 16px 0; }
+.note p { margin: 0; }
+.table-wrap { overflow-x: auto; margin: 8px 0 16px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; vertical-align: top; padding: 8px 12px 8px 0; border-bottom: 1px solid var(--rule); }
+th { font-weight: 600; white-space: nowrap; color: var(--muted); font-size: 13px; }
+td.type { color: var(--muted); font-family: ui-monospace, Menlo, monospace; font-size: 13px; white-space: nowrap; }
+th.hl { color: var(--accent); }
+.cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+.cols ol, .cols ul { padding-left: 20px; }
+.label-ok { color: var(--ok); } .label-bad { color: var(--bad); }
+.tag { font-size: 12px; color: var(--muted); background: var(--soft); border-radius: 4px; padding: 1px 6px; margin: 0 4px 2px 0; display: inline-block; white-space: nowrap; }
+.ds-desc { color: var(--muted); font-size: 13px; }
+.nolink { color: var(--muted); font-size: 13px; }
+footer { color: var(--muted); font-size: 13px; margin-top: 64px; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: minmax(0, 1fr); }
+  nav.toc { position: static; height: auto; padding: 24px 16px 0; }
+  main { padding: 24px 16px 64px; }
+  .cols { grid-template-columns: 1fr; gap: 0; }
+  header.hero h1 { font-size: 26px; }
+  section.stage { padding-top: 40px; margin-top: 40px; }
+}
+@media print {
+  nav.toc { display: none; }
+  .layout { display: block; }
+  main { padding: 0; max-width: none; }
+  section.stage { break-before: page; border: 0; margin: 0; padding: 0; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<nav class="toc" aria-label="Stages">
+  <div class="brand">DE Intern Task Bank</div>
+    <ol>
+    <li><a href="#stage-0"><span class="num">0</span><span>Take-home test</span></a></li>
+    <li><a href="#stage-1"><span class="num">1</span><span>CSV → PostgreSQL</span></a></li>
+    <li><a href="#stage-2"><span class="num">2</span><span>CSV → MinIO Parquet</span></a></li>
+    <li><a href="#stage-3"><span class="num">3</span><span>Streaming + batch into ClickHouse</span></a></li>
+    <li><a href="#stage-4"><span class="num">4</span><span>Baserow as a third source</span></a></li>
+    <li><a href="#stage-5"><span class="num">5</span><span>Superset dashboards</span></a></li>
+    <li><a href="#stage-6"><span class="num">6</span><span>RAG over the warehouse</span></a></li>
+    <li><a href="#datasets"><span class="num">A</span><span>Appendix: dataset list</span></a></li>
+  </ol>
+</nav>
+
+<main>
+<header class="hero">
+  <h1>Data Engineer Intern Task Bank</h1>
+  <p>Seven stages. Work through them in order: each one builds on the stages before it.</p>
+</header>
+
+
+<!-- ============================== STAGE 0 ============================== -->
+<section class="stage" id="stage-0">
+  <div class="eyebrow"><b>Stage 0 · Onboarding</b></div>
+  <h2>Springer Capital: Take-Home Test for Data Engineer</h2>
+
+  <h3>Objective</h3>
+  <p>Build a data profiling and pipeline using Python with Pandas or PySpark or SparkSQL to model a user's referral program and implement business logic to identify and avoid potential fraud. Ensure the code structure is readable and maintainable. Provide the model documentation to ensure business users understand.</p>
+
+  <h4>Requirements</h4>
+  <ol>
+    <li><strong>Script:</strong> develop a script to process and analyze the referral data.</li>
+    <li><strong>Data profiling:</strong> develop a script to profile all tables from sources.</li>
+    <li><strong>Docker:</strong> containerize the application using Docker.</li>
+    <li><strong>Documentation:</strong> provide documentation including a data dictionary for non-technical users (business users) and a document to operate the Docker setup / set up the environment for engineers.</li>
+  </ol>
+
+  <h3>Business flow for the referral program</h3>
+  <p>The referral program aims to incentivize existing users (<em>referrers</em>) to bring new users (<em>referees</em>) to the platform. The program tracks referrals, assigns rewards, and verifies transactions to ensure the integrity of the program. The flow involves seven tables.</p>
+
+  <h4>1. User registration and referral submission: <code>user_referrals</code></h4>
+  <p>A new user (referee) signs up using a referral code provided by an existing user (referrer). A record is created in <code>user_referrals</code> to track this referral.</p>
+  <div class="table-wrap"><table>
+    <tr><th>Column</th><th>Type</th><th>Description</th></tr>
+    <tr><td><code>referral_id</code></td><td class="type">string</td><td>Unique identifier for the referral.</td></tr>
+    <tr><td><code>referral_at</code></td><td class="type">timestamp</td><td>Timestamp when the referral was created.</td></tr>
+    <tr><td><code>referrer_id</code></td><td class="type">string</td><td>ID of the user who referred the new user.</td></tr>
+    <tr><td><code>referee_id</code></td><td class="type">string</td><td>ID of the new user (only used if <code>referral_source</code> is "Lead").</td></tr>
+    <tr><td><code>referee_name</code></td><td class="type">string</td><td>Name of the new user.</td></tr>
+    <tr><td><code>referee_phone</code></td><td class="type">string</td><td>Phone number of the new user.</td></tr>
+    <tr><td><code>referral_source</code></td><td class="type">string</td><td>Source of the referral (e.g. "User Sign Up", "Draft Transaction", "Lead").</td></tr>
+    <tr><td><code>referral_reward_id</code></td><td class="type">integer</td><td>ID of the referral reward.</td></tr>
+    <tr><td><code>transaction_id</code></td><td class="type">string</td><td>ID of the transaction linked to the referral.</td></tr>
+    <tr><td><code>updated_at</code></td><td class="type">timestamp</td><td>Timestamp when the referral was last updated.</td></tr>
+    <tr><td><code>user_referral_status_id</code></td><td class="type">integer</td><td>ID of the referral status.</td></tr>
+  </table></div>
+
+  <h4>2. Referral details: <code>user_referral_logs</code></h4>
+  <p>Additional details about the referral, such as the transaction ID linked to the referral and reward status.</p>
+  <div class="table-wrap"><table>
+    <tr><th>Column</th><th>Type</th><th>Description</th></tr>
+    <tr><td><code>id</code></td><td class="type">integer</td><td>Unique log id.</td></tr>
+    <tr><td><code>user_referral_id</code></td><td class="type">string</td><td>Foreign key linking to <code>user_referrals</code>.</td></tr>
+    <tr><td><code>source_transaction_id</code></td><td class="type">string</td><td>ID of the transaction that resulted from the referral.</td></tr>
+    <tr><td><code>created_at</code></td><td class="type">timestamp</td><td>Timestamp when the changes are created.</td></tr>
+    <tr><td><code>is_reward_granted</code></td><td class="type">bool</td><td>Indicates whether the reward has been granted.</td></tr>
+  </table></div>
+
+  <h4>3. User information: <code>user_logs</code></h4>
+  <p>Information about users, both referrers and referees.</p>
+  <div class="table-wrap"><table>
+    <tr><th>Column</th><th>Type</th><th>Description</th></tr>
+    <tr><td><code>id</code></td><td class="type">integer</td><td>Unique log id.</td></tr>
+    <tr><td><code>user_id</code></td><td class="type">string</td><td>ID of the user.</td></tr>
+    <tr><td><code>name</code></td><td class="type">string</td><td>Name of the user.</td></tr>
+    <tr><td><code>phone_number</code></td><td class="type">string</td><td>Phone number of the user.</td></tr>
+    <tr><td><code>homeclub</code></td><td class="type">string</td><td>Home club of the user.</td></tr>
+    <tr><td><code>timezone_homeclub</code></td><td class="type">string</td><td>User timezone.</td></tr>
+    <tr><td><code>membership_expired_date</code></td><td class="type">timestamp</td><td>Date when the user's membership expires.</td></tr>
+    <tr><td><code>is_deleted</code></td><td class="type">bool</td><td>Flag indicating whether the user's account is deleted.</td></tr>
+  </table></div>
+
+  <h4>4. Referral status tracking: <code>user_referral_statuses</code></h4>
+  <div class="table-wrap"><table>
+    <tr><th>Column</th><th>Type</th><th>Description</th></tr>
+    <tr><td><code>id</code></td><td class="type">integer</td><td>Unique identifier for the referral status.</td></tr>
+    <tr><td><code>description</code></td><td class="type">string</td><td>Description of the status (e.g. "Berhasil", "Menunggu", "Tidak Berhasil").</td></tr>
+    <tr><td><code>created_at</code></td><td class="type">timestamp</td><td>Timestamp when the status was created.</td></tr>
+  </table></div>
+
+  <h4>5. Reward management: <code>referral_rewards</code></h4>
+  <div class="table-wrap"><table>
+    <tr><th>Column</th><th>Type</th><th>Description</th></tr>
+    <tr><td><code>id</code></td><td class="type">integer</td><td>Unique identifier for the reward.</td></tr>
+    <tr><td><code>reward_value</code></td><td class="type">integer</td><td>Value of the reward.</td></tr>
+    <tr><td><code>reward_type</code></td><td class="type">integer</td><td>Type of reward (e.g. monetary, points).</td></tr>
+    <tr><td><code>created_at</code></td><td class="type">timestamp</td><td>Timestamp when the reward was created.</td></tr>
+  </table></div>
+
+  <h4>6. Transaction verification: <code>paid_transactions</code></h4>
+  <div class="table-wrap"><table>
+    <tr><th>Column</th><th>Type</th><th>Description</th></tr>
+    <tr><td><code>transaction_id</code></td><td class="type">string</td><td>Unique ID of the transaction.</td></tr>
+    <tr><td><code>transaction_status</code></td><td class="type">string</td><td>Status of the transaction (e.g. "PAID").</td></tr>
+    <tr><td><code>transaction_at</code></td><td class="type">timestamp</td><td>Timestamp when the transaction occurred.</td></tr>
+    <tr><td><code>transaction_location</code></td><td class="type">string</td><td>Location of the transaction.</td></tr>
+    <tr><td><code>timezone_transaction</code></td><td class="type">string</td><td>Timezone of the transaction.</td></tr>
+    <tr><td><code>transaction_type</code></td><td class="type">string</td><td>Type of transaction.</td></tr>
+  </table></div>
+
+  <h4>7. Lead information: <code>lead_logs</code></h4>
+  <div class="table-wrap"><table>
+    <tr><th>Column</th><th>Type</th><th>Description</th></tr>
+    <tr><td><code>id</code></td><td class="type">integer</td><td>Unique log id.</td></tr>
+    <tr><td><code>lead_id</code></td><td class="type">string</td><td>ID of the lead.</td></tr>
+    <tr><td><code>source_category</code></td><td class="type">string</td><td>Category of the lead source.</td></tr>
+    <tr><td><code>created_at</code></td><td class="type">timestamp</td><td>Timestamp when the lead was created.</td></tr>
+    <tr><td><code>preferred_location</code></td><td class="type">string</td><td>Preferred location of the lead.</td></tr>
+    <tr><td><code>timezone_location</code></td><td class="type">string</td><td>Timezone of the preferred location.</td></tr>
+    <tr><td><code>current_status</code></td><td class="type">string</td><td>Current status of the lead.</td></tr>
+  </table></div>
+
+  <h3>Table structure</h3>
+  <p>Reference ERD: <a href="https://dbdiagram.io/d/take-home-test-6694f17a9939893daef1260f">dbdiagram.io/d/take-home-test-6694f17a9939893daef1260f</a>. Column types above are taken from it. <code>user_referrals</code> is the hub that every other table joins to:</p>
+  <div class="table-wrap"><table>
+    <tr><th>From <code>user_referrals</code></th><th>Joins to</th><th>Cardinality</th><th>Note</th></tr>
+    <tr><td><code>referral_id</code></td><td><code>user_referral_logs.user_referral_id</code></td><td>1 → many</td><td></td></tr>
+    <tr><td><code>referrer_id</code></td><td><code>user_logs.user_id</code></td><td>1 → many</td><td>user_logs is a log, so a user can appear more than once.</td></tr>
+    <tr><td><code>referee_id</code></td><td><code>lead_logs.lead_id</code></td><td>1 → many</td><td>Only join to leads if <code>referral_source</code> is "Lead"; otherwise use <code>referee_name</code> and <code>referee_phone</code>.</td></tr>
+    <tr><td><code>referral_reward_id</code></td><td><code>referral_rewards.id</code></td><td>many → 1</td><td></td></tr>
+    <tr><td><code>transaction_id</code></td><td><code>paid_transactions.transaction_id</code></td><td>many → 1</td><td></td></tr>
+    <tr><td><code>user_referral_status_id</code></td><td><code>user_referral_statuses.id</code></td><td>many → 1</td><td></td></tr>
+  </table></div>
+
+  <h3>Test instructions</h3>
+
+  <h4>1. Data profiling</h4>
+  <p>Ensure that you understand the columns on all tables by profiling them. At minimum, find the <strong>null count</strong> and the <strong>distinct value count</strong>. The example profiling document uses this layout (the two required metrics are highlighted):</p>
+  <div class="table-wrap"><table>
+    <tr><th>Column Name</th><th>Data Type</th><th>Defined Length</th><th>Nulls Allowed</th><th class="hl">Null Count</th><th>% Populated</th><th class="hl">Distinct Value Count</th><th>Minimum Value</th><th>Maximum Value</th><th>Max Actual Length</th><th>Link to Frequencies</th><th>Link to Patterns</th></tr>
+    <tr><td>county_name</td><td>varchar</td><td>60</td><td>Yes</td><td>0</td><td>100.00%</td><td>208</td><td>Aberdeen City</td><td>York</td><td>37</td><td>Frequency</td><td>Pattern</td></tr>
+    <tr><td>id</td><td>integer</td><td>10</td><td>No</td><td>0</td><td>100.00%</td><td>258,382</td><td>1</td><td>258,382</td><td>Not a string</td><td>Frequency</td><td>Not a string</td></tr>
+  </table></div>
+
+  <h4>2. Script development</h4>
+  <ol>
+    <li><strong>Data loading:</strong> load all CSV files into DataFrames.</li>
+    <li><strong>Data cleaning:</strong> clean the data by handling missing values and correcting data types.</li>
+    <li><strong>Data processing:</strong>
+      <ul>
+        <li><strong>Time adjustment:</strong> all timestamp values are in UTC. Convert them to local time based on the timezone provided on the table. If the timezone does not exist on that table, join with another table.</li>
+        <li><strong>Join tables:</strong> merge the tables appropriately and make sure there are no duplicates.</li>
+        <li><strong>Handling nulls:</strong> null values should not exist / should be removed.</li>
+        <li><strong>String adjustment:</strong> apply initcap to string values, except the club name.</li>
+        <li><strong>Source category:</strong> determine <code>referral_source_category</code> using the following logic:
+<pre><code>CASE
+  WHEN referral_source = 'User Sign Up'      THEN 'Online'
+  WHEN referral_source = 'Draft Transaction' THEN 'Offline'
+  WHEN referral_source = 'Lead'              THEN leads.source_category
+END AS referral_source_category</code></pre>
+        </li>
+      </ul>
+    </li>
+    <li><strong>Basic business logic implementation:</strong> implement these rules to detect potential fraud in a new column named <code>is_business_logic_valid</code> (type: bool).
+      <div class="cols">
+        <div>
+          <h4 class="label-ok">Valid referral rewards</h4>
+          <p><strong>Condition 1:</strong> valid if all of the following hold:</p>
+          <ol>
+            <li>The reward value is greater than 0.</li>
+            <li>The referral status is "Berhasil" (Successful).</li>
+            <li>The referral has a transaction ID.</li>
+            <li>The transaction status for the referral is "PAID".</li>
+            <li>The transaction type for the referral is "NEW".</li>
+            <li>The transaction occurred after the referral was created.</li>
+            <li>The transaction happened in the same month as the referral creation.</li>
+            <li>The referrer's membership has not expired.</li>
+            <li>The referrer's account is not deleted.</li>
+            <li>The reward has been granted to the referee.</li>
+          </ol>
+          <p><strong>Condition 2:</strong> valid if:</p>
+          <ol>
+            <li>The referral status is either "Menunggu" (Pending) or "Tidak Berhasil" (Failed).</li>
+            <li>There is no reward value assigned.</li>
+          </ol>
+        </div>
+        <div>
+          <h4 class="label-bad">Invalid referral rewards</h4>
+          <p><strong>Condition 1:</strong> invalid if the reward value is greater than 0 <em>and</em> the referral status is not "Berhasil".</p>
+          <p><strong>Condition 2:</strong> invalid if the reward value is greater than 0 <em>and</em> there is no transaction ID for the referral.</p>
+          <p><strong>Condition 3:</strong> invalid if:</p>
+          <ol>
+            <li>There is no reward value assigned.</li>
+            <li>The referral has a transaction ID.</li>
+            <li>The transaction status for the referral is "PAID".</li>
+            <li>The transaction occurred after the referral was created.</li>
+          </ol>
+          <p><strong>Condition 4:</strong> invalid if the referral status is "Berhasil" <em>and</em> the reward value is either null or 0.</p>
+          <p><strong>Condition 5:</strong> invalid if the transaction occurred before the referral was created.</p>
+        </div>
+      </div>
+      <p>Finding any invalid business logic in these rules themselves is a plus.</p>
+    </li>
+    <li><strong>Output:</strong> generate a report/table in CSV format that indicates whether each referral reward is valid or invalid based on the business logic. <strong>The correct report has 46 rows.</strong> It includes these columns:
+      <div class="table-wrap"><table>
+        <tr><th>Column</th><th>Data type</th><th>Sample value</th></tr>
+        <tr><td><code>referral_details_id</code></td><td class="type">INTEGER</td><td>101</td></tr>
+        <tr><td><code>referral_id</code></td><td class="type">STRING</td><td>"9331c8f144dad5a3b8e4a10467b4343a"</td></tr>
+        <tr><td><code>referral_source</code></td><td class="type">STRING</td><td>"User Sign Up"</td></tr>
+        <tr><td><code>referral_source_category</code></td><td class="type">STRING</td><td>"Online"</td></tr>
+        <tr><td><code>referral_at</code></td><td class="type">DATETIME</td><td>"2023-06-15 14:35:00"</td></tr>
+        <tr><td><code>referrer_id</code></td><td class="type">STRING</td><td>"2c71c5d66c7e12a0b3c200ba6ed3b78e"</td></tr>
+        <tr><td><code>referrer_name</code></td><td class="type">STRING</td><td>"John Doe"</td></tr>
+        <tr><td><code>referrer_phone_number</code></td><td class="type">STRING</td><td>"123-456-7890"</td></tr>
+        <tr><td><code>referrer_homeclub</code></td><td class="type">STRING</td><td>"PERMATA HIJAU"</td></tr>
+        <tr><td><code>referee_id</code></td><td class="type">STRING</td><td>"f12348hbsdkjkfhkjdf"</td></tr>
+        <tr><td><code>referee_name</code></td><td class="type">STRING</td><td>"Jhon Doe"</td></tr>
+        <tr><td><code>referee_phone</code></td><td class="type">STRING</td><td>"987-654-3210"</td></tr>
+        <tr><td><code>referral_status</code></td><td class="type">STRING</td><td>"Berhasil"</td></tr>
+        <tr><td><code>num_reward_days</code></td><td class="type">INT</td><td>30</td></tr>
+        <tr><td><code>transaction_id</code></td><td class="type">STRING</td><td>"1d1eb8a9e864a1cccb2d850398461807"</td></tr>
+        <tr><td><code>transaction_status</code></td><td class="type">STRING</td><td>"Paid"</td></tr>
+        <tr><td><code>transaction_at</code></td><td class="type">DATETIME</td><td>"2023-06-20 10:00:00"</td></tr>
+        <tr><td><code>transaction_location</code></td><td class="type">STRING</td><td>"BENHIL"</td></tr>
+        <tr><td><code>transaction_type</code></td><td class="type">STRING</td><td>"New"</td></tr>
+        <tr><td><code>updated_at</code></td><td class="type">DATETIME</td><td>"2023-06-21 12:00:00"</td></tr>
+        <tr><td><code>reward_granted_at</code></td><td class="type">DATETIME</td><td>"2023-06-30 14:00:00"</td></tr>
+        <tr><td><code>is_business_logic_valid</code></td><td class="type">BOOLEAN</td><td>TRUE</td></tr>
+      </table></div>
+    </li>
+  </ol>
+
+  <h4>3. Docker containerization</h4>
+  <ol>
+    <li><strong>Dockerfile:</strong> create a Dockerfile to containerize the application. Ensure all dependencies are installed, including Python, Pandas, PySpark and any other required libraries.</li>
+    <li><strong>Running instructions:</strong> provide clear instructions on how to build and run the Docker container and export the report file. The report must be stored <strong>outside</strong> the container.</li>
+  </ol>
+
+  <h4>4. Documentation</h4>
+  <ol>
+    <li><strong>Data dictionary:</strong> define each column in the output report, including its meaning/description, data type, and any constraints or relevant notes. It must be understandable by non-technical users (e.g. a Marketing Manager).</li>
+    <li><strong>Script documentation:</strong> comment the script to explain each step and the logic behind it. Include a README with a project overview, setup instructions and usage details. If you upload the report to cloud storage, document how to set up the credentials. <strong>Putting any credentials in the script is prohibited.</strong></li>
+  </ol>
+
+  <h4>Example skeletons (adapt to your own style)</h4>
+  <div class="cols">
+<pre><code># [Import library]
+# Initialize Spark session
+# Load data
+# [Implement load data here]
+# Data cleaning
+# [Implement data cleaning logic here]
+# Data processing
+# [Implement data processing and feature engineering logic here]
+# Basic business logic implementation to detect fraud
+# [Implement fraud detection logic here]
+# Output
+# [Generate and save the report]
+# Stop Spark session</code></pre>
+<pre><code># Dockerfile
+# Use official Python image
+# Set working directory
+# Copy requirements file
+# Install dependencies
+# Copy application code
+# Command to run the application</code></pre>
+  </div>
+
+  <h3>Submission</h3>
+  <ul>
+    <li><strong>Script:</strong> the Python script file (<code>your_script.py</code>) exists.</li>
+    <li><strong>Docker:</strong> the <code>Dockerfile</code> exists.</li>
+    <li><strong>Data profiling:</strong> the result of profiling the tables exists.</li>
+    <li><strong>Documentation:</strong> the data dictionary in Excel format, and a README to run the code.</li>
+    <li><strong>Repository:</strong> push all assets to your designated repository: the script, Dockerfile, data dictionary, README and any additional documentation or configuration required.</li>
+    <li><strong>To complete submission:</strong> email the link to your repository to the Talent Acquisition Team.</li>
+  </ul>
+</section>
+
+<!-- ============================== STAGE 1 ============================== -->
+<section class="stage" id="stage-1">
+  <div class="eyebrow"><b>Stage 1 · Foundation</b> · Requires: stage 0</div>
+  <h2>Local CSV → PostgreSQL via Dockerized Airflow</h2>
+
+  <h3>Objective</h3>
+  <p>Build a <strong>containerized Apache Airflow pipeline</strong> that ingests a local CSV file, applies <strong>basic validation</strong>, and loads the cleaned data into a <strong>PostgreSQL</strong> table. Pick your dataset from the <a href="#datasets">dataset list</a>. All DAGs, configs and documentation are committed to <strong>your own repository</strong>.</p>
+
+  <h3>Why this task exists</h3>
+  <p>This is the first of a two-part sequence. It is a scaled-down mirror of a real data platform (Airflow-orchestrated ingestion into a warehouse). Stage 2 reuses the <em>same dataset</em> but lands it in MinIO as Parquet instead of PostgreSQL. Doing both teaches the difference between a relational sink and an object-store / lakehouse sink.</p>
+  <p>By the end you should be comfortable with Airflow DAG authoring, containerizing a stack with Docker Compose, schema-driven CSV ingestion, secure credential handling, and clean commit conventions.</p>
+
+  <h3>Definition of done</h3>
+  <ul>
+    <li>The Airflow DAG runs <strong>end to end</strong>: CSV → transform / validate → PostgreSQL table.</li>
+    <li>The environment is <strong>reproducible via Docker Compose</strong>.</li>
+    <li>Credentials (PostgreSQL host / user / password) are <strong>stored securely</strong>, never hardcoded.</li>
+    <li>The dataset's <code>status</code> (its analysis status in the <a href="#datasets">dataset list</a>) is recorded in the manifest and <strong>respected</strong> by the pipeline.</li>
+    <li>Code and docs are <strong>committed</strong> to your repo with clear run instructions.</li>
+  </ul>
+
+  <h3>Architecture and data flow</h3>
+<pre><code>dataset list (download the CSV)
+        |
+        v
+   local CSV ----> [ Airflow DAG, running in Docker ]
+                     |             |            |
+                  validate  ->  transform  ->  load
+               (schema.yaml)    (clean)    (PostgresHook)
+                                                |
+                                                v
+                                        PostgreSQL table
+
+Everything (Airflow + PostgreSQL) runs locally via docker compose.</code></pre>
+
+  <h3>Repository layout</h3>
+<pre><code>&lt;your-repo&gt;/
+  stage-1-csv-to-postgres/
+    &lt;dataset_name&gt;/
+      manifest.yaml        # dataset name, source, owner, status
+      schema.yaml          # columns, types, nullable, primary key
+      ddl.sql              # CREATE TABLE for the target
+    dags/
+      load_&lt;dataset&gt;_to_postgres.py
+    docker-compose.yaml
+    .env.example           # placeholders only, NO real secrets
+    README.md</code></pre>
+
+  <h3>Stories</h3>
+  <p class="meta">Deliverables, hints and acceptance criteria are guidance. Confirm the exact expectations with your mentor if in doubt.</p>
+
+  <div>
+    <h4>Story 1: Prepare the dataset manifest, schema YAML and SQL DDL</h4>
+    <p><strong>Goal:</strong> formally describe the dataset before writing any pipeline code.</p>
+    <p><strong>Deliverables:</strong> <code>manifest.yaml</code>, <code>schema.yaml</code>, <code>ddl.sql</code>.</p>
+    <p><strong>Example <code>schema.yaml</code>:</strong></p>
+<pre><code>dataset: example_dataset
+primary_key: [id]
+columns:
+  - name: id
+    type: integer
+    nullable: false
+  - name: client_name
+    type: string
+    nullable: false
+  - name: amount
+    type: decimal(12,2)
+    nullable: true
+  - name: created_at
+    type: timestamp
+    nullable: false</code></pre>
+    <p><strong>Acceptance:</strong> the schema matches the CSV header and types; <code>ddl.sql</code> creates the table without error; the manifest records the dataset <code>status</code>.</p>
+  </div>
+
+  <div>
+    <h4>Story 2: Dockerized Airflow environment</h4>
+    <p><strong>Goal:</strong> a one-command local stack running Airflow + PostgreSQL.</p>
+    <p><strong>Deliverables:</strong> <code>docker-compose.yaml</code>, <code>.env.example</code>.</p>
+    <p><strong>Hints:</strong> base it on the official <code>apache/airflow</code> image; mount your <code>dags/</code> folder; expose the Airflow UI on <code>:8080</code>; keep the target PostgreSQL as its own service; pull all connection values from <code>.env</code> (never commit real secrets).</p>
+    <p><strong>Acceptance:</strong> <code>docker compose up</code> starts Airflow, the UI loads, and your DAG appears in the list.</p>
+  </div>
+
+  <div>
+    <h4>Story 3: Airflow DAG to load the local CSV</h4>
+    <p><strong>Goal:</strong> a DAG that reads the CSV, validates it against <code>schema.yaml</code>, transforms/cleans it, and loads it into PostgreSQL.</p>
+    <p><strong>Suggested tasks:</strong> <code>read_csv</code> → <code>validate_schema</code> (fail on mismatch) → <code>transform</code> → <code>load_to_postgres</code> (idempotent).</p>
+    <p><strong>Hints:</strong> use <code>PythonOperator</code> + <code>PostgresHook</code> (or SQLAlchemy); pandas for read/clean; set <code>catchup=False</code>; respect the dataset <code>status</code> field; make reloads safe (truncate-then-load, or upsert on the primary key).</p>
+    <p><strong>Acceptance:</strong> a full run populates the PostgreSQL table with the expected rows; re-running does not duplicate data; a deliberately malformed CSV makes the DAG fail at the validation step.</p>
+  </div>
+
+  <div>
+    <h4>Story 4: Documentation and runbook</h4>
+    <p><strong>Goal:</strong> anyone can reproduce your pipeline from scratch.</p>
+    <p><strong>Deliverable:</strong> <code>README.md</code> covering prerequisites, <code>docker compose up</code>, how to trigger the DAG, how to verify rows in PostgreSQL, and common troubleshooting.</p>
+    <p><strong>Acceptance:</strong> a teammate with only Docker installed can follow the README end to end.</p>
+  </div>
+
+  <h3>Tech stack and prerequisites</h3>
+  <ul>
+    <li>Docker and Docker Compose</li>
+    <li>Python 3.11+, Apache Airflow 2.x</li>
+    <li>PostgreSQL</li>
+    <li>pandas, PyYAML, a Postgres driver (psycopg2)</li>
+    <li>Your own Git repository</li>
+  </ul>
+
+  <h3>Getting started</h3>
+  <ol>
+    <li>Create your repository and a <code>stage-1-csv-to-postgres/</code> folder.</li>
+    <li>Choose a dataset from the <a href="#datasets">dataset list</a> and download its CSV into your dataset folder.</li>
+    <li>Story 1: write <code>manifest.yaml</code>, <code>schema.yaml</code>, <code>ddl.sql</code>.</li>
+    <li>Story 2: write <code>docker-compose.yaml</code> and <code>.env.example</code>; bring the stack up.</li>
+    <li>Story 3: write and run the DAG until the table loads cleanly.</li>
+    <li>Story 4: write the README, then open a PR for review.</li>
+  </ol>
+  <div class="note"><p><strong>Conventions:</strong> no secrets in code (use <code>.env</code> / Airflow Connections), <code>catchup=False</code>, and no heavy top-level I/O in the DAG file.</p></div>
+</section>
+
+<!-- ============================== STAGE 2 ============================== -->
+<section class="stage" id="stage-2">
+  <div class="eyebrow"><b>Stage 2 · Foundation</b> · Requires: stage 1 (same dataset)</div>
+  <h2>Local CSV → MinIO Parquet Ingestion Pipeline</h2>
+
+  <h3>Objective</h3>
+  <p>Build an <strong>Airflow-based pipeline</strong> that ingests a CSV file (<code>dags/extraction/sample.csv</code>), <strong>validates it against a schema contract</strong>, transforms it, and loads it into <strong>MinIO as partitioned Parquet</strong>.</p>
+
+  <h3>Relationship to stage 1</h3>
+  <p>This stage <strong>reuses the same dataset as stage 1</strong> and keeps the same shape (ingest → validate → transform → load), but changes the destination from a relational database to an <strong>object store in Parquet format</strong>. It also raises the bar on validation: the <strong>schema contract must fail the DAG on mismatch</strong>, which is stricter than stage 1's basic validation.</p>
+
+  <h3>Definition of done</h3>
+  <ul>
+    <li><strong>End-to-end run:</strong> CSV (local) → validate → transform → Parquet in MinIO (server).</li>
+    <li><strong>Schema contract enforced:</strong> the DAG <strong>fails</strong> if the CSV does not match.</li>
+    <li>Parquet files are stored in MinIO and <strong>browsable via the MinIO console</strong>.</li>
+    <li>The environment is <strong>reproducible via Docker Compose</strong>.</li>
+    <li>Code and docs are <strong>committed</strong> to your repo with run steps.</li>
+  </ul>
+
+  <h3>Architecture and data flow</h3>
+<pre><code>dags/extraction/sample.csv  (same dataset as stage 1)
+        |
+        v
+  [ Airflow DAG, running in Docker ]
+     |                  |             |
+  validate     ->   transform  ->  write Parquet
+  (schema contract)   (clean)       (partitioned)
+  FAIL on mismatch                     |
+                                       v
+                          MinIO bucket (S3-compatible)
+                          browsable in MinIO console :9001
+
+Airflow + MinIO both run locally via docker compose.</code></pre>
+
+  <h3>Repository layout</h3>
+<pre><code>&lt;your-repo&gt;/
+  stage-2-csv-to-minio/
+    &lt;dataset_name&gt;/
+      manifest.yaml          # dataset name, source, owner, status
+      schema_contract.yaml   # the contract enforced at runtime
+    dags/
+      csv_to_parquet_minio.py
+    docker-compose.yaml      # airflow + minio
+    .env.example
+    README.md</code></pre>
+
+  <h3>Stories</h3>
+  <p class="meta">Deliverables, hints and acceptance criteria are guidance. Confirm the exact expectations with your mentor if in doubt.</p>
+
+  <div>
+    <h4>Story 1: Dataset manifest and schema contract</h4>
+    <p><strong>Goal:</strong> define the dataset and a <strong>schema contract</strong> the pipeline will enforce.</p>
+    <p><strong>Deliverables:</strong> <code>manifest.yaml</code>, <code>schema_contract.yaml</code>.</p>
+    <p><strong>Hints:</strong> the contract specifies column names, types, nullability and, optionally, simple value rules. The DAG must <strong>reject and fail</strong> when the incoming CSV violates it. This is the core learning goal of this stage.</p>
+    <p><strong>Acceptance:</strong> a conforming CSV passes; a CSV with a missing, renamed or mistyped column fails the contract check.</p>
+  </div>
+
+  <div>
+    <h4>Story 2: Dockerized Airflow + MinIO environment</h4>
+    <p><strong>Goal:</strong> a one-command local stack running Airflow + MinIO.</p>
+    <p><strong>Deliverables:</strong> <code>docker-compose.yaml</code>, <code>.env.example</code>.</p>
+    <p><strong>Hints:</strong> add the <code>minio/minio</code> service (API <code>:9000</code>, console <code>:9001</code>); create the target bucket on startup (an init/<code>mc</code> container or a first-run task); feed the MinIO credentials and the Airflow connection from <code>.env</code>.</p>
+    <p><strong>Acceptance:</strong> <code>docker compose up</code> brings up Airflow <em>and</em> the MinIO console; you can log into the console and see the (empty) target bucket.</p>
+  </div>
+
+  <div>
+    <h4>Story 3: Airflow DAG: CSV → Parquet → MinIO</h4>
+    <p><strong>Goal:</strong> a DAG that reads the CSV, validates it against the contract, transforms it, and writes <strong>partitioned Parquet</strong> to MinIO.</p>
+    <p><strong>Suggested tasks:</strong> <code>read_csv</code> → <code>validate_contract</code> (fail on mismatch) → <code>transform</code> → <code>write_parquet_to_minio</code>.</p>
+    <p><strong>Hints:</strong> use <code>pyarrow</code>/pandas to write Parquet; partition by a sensible column (e.g. a date); talk to MinIO with the <code>minio</code> client, <code>boto3</code> or <code>s3fs</code> (S3-compatible, custom <code>endpoint_url</code>); set <code>catchup=False</code>.</p>
+    <p><strong>Acceptance:</strong> a full run produces partitioned <code>.parquet</code> objects visible in the MinIO console; a contract-violating CSV fails the DAG before anything is written.</p>
+  </div>
+
+  <h3>Parquet and partitioning notes</h3>
+  <ul>
+    <li><strong>Format:</strong> columnar Parquet, not CSV. This is the lakehouse-style sink.</li>
+    <li><strong>Partitioning:</strong> lay files out as <code>bucket/dataset/&lt;partition_col&gt;=value/part-*.parquet</code> so the data is query-friendly and browsable.</li>
+    <li><strong>Access:</strong> MinIO is S3-compatible. Point your S3 client at the MinIO <code>endpoint_url</code> with the MinIO access and secret keys.</li>
+  </ul>
+
+  <h3>Tech stack and prerequisites</h3>
+  <ul>
+    <li>Docker and Docker Compose</li>
+    <li>Python 3.11+, Apache Airflow 2.x</li>
+    <li>MinIO (server + console)</li>
+    <li>pandas, pyarrow, PyYAML, and an S3 client (minio / boto3 / s3fs)</li>
+    <li>Your own Git repository (the same one as stage 1)</li>
+  </ul>
+
+  <h3>Getting started</h3>
+  <ol>
+    <li>Reuse the stage 1 dataset; place the CSV at <code>dags/extraction/sample.csv</code>.</li>
+    <li>Story 1: write <code>manifest.yaml</code> and <code>schema_contract.yaml</code>.</li>
+    <li>Story 2: write <code>docker-compose.yaml</code> (Airflow + MinIO); bring it up and confirm the bucket exists.</li>
+    <li>Story 3: write the DAG; run it until partitioned Parquet appears in MinIO.</li>
+    <li>Verify in the MinIO console, write the README, and open a PR for review.</li>
+  </ol>
+  <div class="note"><p><strong>Conventions:</strong> no secrets in code (use <code>.env</code> / Airflow Connections), <code>catchup=False</code>, and no heavy top-level I/O in the DAG file.</p></div>
+</section>
+
+<!-- ============================== STAGE 3 ============================== -->
+<section class="stage" id="stage-3">
+  <div class="eyebrow"><b>Stage 3 · Data warehouse</b> · Requires: stages 1–2</div>
+  <h2>Streaming and Batch Pipelines into a ClickHouse Medallion Warehouse</h2>
+
+  <h3>Objective</h3>
+  <p>Find <strong>two public data sources</strong>, one realtime and one batch, and build a pipeline for each. Both pipelines load into <strong>ClickHouse</strong> using <strong>ELT</strong> to create a <strong>Medallion Architecture</strong>.</p>
+
+  <h3>Requirements</h3>
+  <div class="cols">
+    <div>
+      <h4>Realtime / streaming source</h4>
+      <ul>
+        <li>A public data source that produces data continuously.</li>
+        <li>The pipeline is built with <strong>Apache NiFi</strong>.</li>
+        <li>Lands in ClickHouse through ELT into the medallion layers.</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Batch source</h4>
+      <ul>
+        <li>A public data source that is pulled in batches.</li>
+        <li>The pipeline is built with <strong>Airflow + dbt</strong>.</li>
+        <li>Lands in ClickHouse through ELT into the medallion layers.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Key terms</h3>
+  <ul>
+    <li><strong>ELT</strong> (Extract, Load, Transform): load the raw data into ClickHouse first, then transform it inside the warehouse. In ETL, by contrast, the data is transformed before it is loaded.</li>
+    <li><strong>Medallion Architecture</strong>: data moves through three layers inside the warehouse: <strong>bronze</strong> (raw, as ingested) → <strong>silver</strong> (cleaned and conformed) → <strong>gold</strong> (business-ready aggregates and models).</li>
+  </ul>
+</section>
+
+<!-- ============================== STAGE 4 ============================== -->
+<section class="stage" id="stage-4">
+  <div class="eyebrow"><b>Stage 4 · Data warehouse</b> · Requires: stage 3 completed</div>
+  <h2>Add Baserow as a Third Data Source</h2>
+
+  <div class="note"><p>Start this stage only after you have completed stage 3.</p></div>
+
+  <h3>Objective</h3>
+  <p>Add one more data source from <strong>Baserow</strong> and build the Medallion Architecture for it using <strong>Airflow + dbt</strong>, alongside the sources from stage 3.</p>
+
+  <h3>Steps</h3>
+  <ol>
+    <li>Create a Baserow account.</li>
+    <li>Create a database.</li>
+    <li>Fill the database with dummy / mock data.</li>
+    <li>Ingest the data using any method you prefer.</li>
+    <li>Build the Medallion Architecture (bronze → silver → gold) for the Baserow data using Airflow + dbt.</li>
+  </ol>
+</section>
+
+<!-- ============================== STAGE 5 ============================== -->
+<section class="stage" id="stage-5">
+  <div class="eyebrow"><b>Stage 5 · Analytics</b> · Requires: stages 3–4</div>
+  <h2>Dashboards with Apache Superset</h2>
+
+  <h3>Objective</h3>
+  <p>Install <strong>Apache Superset</strong> with the <strong>ClickHouse driver</strong> included, then build an insightful dashboard on the data warehouse you created.</p>
+
+  <h3>Steps</h3>
+  <ol>
+    <li>Install Apache Superset with the ClickHouse driver included.</li>
+    <li>Connect Superset to your ClickHouse data warehouse.</li>
+    <li>Build an insightful dashboard from the warehouse.</li>
+    <li>Power the charts with ClickHouse-specific analytical queries (see below).</li>
+  </ol>
+
+  <h3>Use what makes ClickHouse different</h3>
+  <p>I expect your dashboard queries to use ClickHouse's own analytical features: functions and SQL clauses that a typical relational database such as PostgreSQL does not have. A dashboard you could have built on any database misses the point of this stage. Some places to start:</p>
+  <ul>
+    <li><code>argMax</code> / <code>argMin</code>: the value of one column at the row where another column is highest or lowest.</li>
+    <li>Aggregate combinators such as <code>-If</code>, <code>-Array</code> and <code>-State</code> / <code>-Merge</code> (e.g. <code>sumIf</code>, <code>uniqIf</code>).</li>
+    <li><code>uniq</code> and <code>quantiles</code>: fast approximate distinct counts and percentiles.</li>
+    <li><code>windowFunnel</code>, <code>retention</code>, <code>sequenceMatch</code>: funnel and cohort analysis in one query.</li>
+    <li><code>ORDER BY … WITH FILL</code>: fill gaps in time series. <code>LIMIT n BY</code>: top-N per group.</li>
+    <li><code>ASOF JOIN</code>: join each row to the closest earlier row in time.</li>
+  </ul>
+  <div class="note"><p>Visual decisions (chart types, layout, which metrics to highlight) are up to you.</p></div>
+</section>
+
+<!-- ============================== STAGE 6 ============================== -->
+<section class="stage" id="stage-6">
+  <div class="eyebrow"><b>Stage 6 · AI</b> · Requires: stages 3–5</div>
+  <h2>A RAG System over the Data Warehouse</h2>
+  
+  <h3>Setup</h3>
+  <ol>
+    <li>Install the vector database <strong>Qdrant</strong>.</li>
+    <li>Install the local LLM wrapper <strong>Ollama</strong>, and pull a lightweight LLM model.</li>
+    <li>Create a new folder <strong>inside the same directory as your data warehouse mini project</strong> for the RAG system.</li>
+  </ol>
+
+  <h3>Core requirements</h3>
+  <div>
+    <h4>1. FastAPI app, backend only</h4>
+    <p>Build a <strong>FastAPI</strong>-based app with <strong>no UI</strong>. It will be tested through the backend only.</p>
+    <p>It provides an endpoint that accepts a question, for example:</p>
+    <pre><code>"What are the differences between the weather in Q1 and Q3?"</code></pre>
+    <p>and returns the answer <strong>in the response of that same endpoint</strong>.</p>
+  </div>
+
+  <div>
+    <h4>2. Embedding job: scheduled and on demand</h4>
+    <p>An embedding job processes <strong>structured data from the data warehouse</strong> into <strong>NoSQL data in the Qdrant vector database</strong>, which becomes the knowledge source for RAG.</p>
+    <ul>
+      <li><strong>Scheduled:</strong> runs <strong>twice a day</strong>.</li>
+      <li><strong>On demand:</strong> runs when an endpoint is called.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h4>3. LLM calls</h4>
+    <p>LLM calls are used to <strong>understand the user input</strong> and to <strong>generate the answer</strong>.</p>
+  </div>
+
+  <div>
+    <h4>4. Guardrails: never hallucinate</h4>
+    <p>The generated response must use proper guardrails and must <strong>never hallucinate</strong>. Test this with the question:</p>
+    <pre><code>"tell me the recipe of chocolate pancake"</code></pre>
+    <p>The answer must not come from outside the warehouse knowledge. A recipe is not in your data, so the system must decline rather than invent one.</p>
+  </div>
+</section>
+
+<!-- ============================== APPENDIX ============================== -->
+<section class="stage" id="datasets">
+  <div class="eyebrow"><b>Appendix</b> · Used by: stages 1 and 2</div>
+  <h2>Dataset List</h2>
+  <p>Choose <strong>one</strong> dataset for stage 1 and reuse it in stage 2. Source: <code>non-classes-dataset-list.xlsx</code>, which has 52 rows. Duplicate entries are merged here into 34 unique datasets; the <em>Codes</em> column lists every original row code. Type, origin and relevance tags are shown only where the sheet records them.</p>
+  <p class="meta"><strong>Status</strong> is the sheet's analysis status (first / second analysis) per code, and is the value your stage 1 manifest records. Entries marked "no link in sheet" have only a name in the source spreadsheet; search for them by name.</p>
+  <div class="table-wrap"><table>
+    <tr><th>Codes</th><th>Dataset</th><th>Tags</th><th>Status</th></tr>
+    <tr><td>100, 105, 132, 148</td><td><a href="https://www.kaggle.com/datasets/marawanxmamdouh/email-thread-summary-dataset">Email Thread Summary Dataset</a><div class="ds-desc">The Email Thread Dataset consists of two main files: email_thread_details and email_thread_summaries. These files collectively offer a comprehensive compilation of email thread information alongside human-generated summaries.</div></td><td><span class="tag">Conversational</span><span class="tag">Human Generated</span><span class="tag">Relevant to Complaint</span><span class="tag">Relevant to Complaint, not relevant to any broad category</span></td><td>100: Done/Completed<br>105: Pending/Completed<br>132: Done/Completed</td></tr>
+    <tr><td>101, 128</td><td><a href="http://huggingface.co/datasets/argilla/FinePersonas-Synthetic-Email-Conversations">FinePersonas-Synthetic-Email-Conversations</a><div class="ds-desc">A synthetic dataset comprising over 300,000 email conversations generated to mimic real-world interactions.</div></td><td><span class="tag">Conversational</span><span class="tag">AI generated</span><span class="tag">Relevant to sales</span></td><td>101: Completed/Completed<br>128: Done</td></tr>
+    <tr><td>102, 129</td><td><a href="https://huggingface.co/datasets/rtweera/customer_care_emails">customer_care_emails</a><div class="ds-desc">dataset simulating customer support email threads, annotated with metadata like sentiment scores, issue types, and resolution status.</div></td><td><span class="tag">Conversational</span><span class="tag">Human Generated</span><span class="tag">Relevant to Frustration</span></td><td>102: Completed/Completed<br>129: Done</td></tr>
+    <tr><td>103, 130</td><td><a href="https://github.com/salokr/Email-Event-Extraction?tab=readme-ov-file">Email-Event-Extraction</a><div class="ds-desc">A dataset of 1,500 email threads annotated for event extraction, encompassing 4,000 emails and approximately 8,000 event instances.</div></td><td><span class="tag">Conversational</span><span class="tag">Human Generated</span><span class="tag">Relevant to Dispute</span></td><td>103: pending</td></tr>
+    <tr><td>104, 131</td><td><a href="https://github.com/ZhangShiyue/EmailSum/tree/main?tab=readme-ov-file">EmailSum Dataset</a><div class="ds-desc">Contains 2,549 email threads, each with 3 to 10 emails, along with both short (&lt;30 words) and long (&lt;100 words) human-annotated summaries.</div></td><td></td><td>104: Completed</td></tr>
+    <tr><td>106, 133</td><td><a href="https://github.com/icip-cas/ChatAlpaca">ChatAlpaca</a><div class="ds-desc">The data currently contain a total of 10,000 conversations with 95,558 utterances.. Each item in the data file represents a different conversation between a simulated user and the ChatGPT.</div></td><td></td><td>106: Completed</td></tr>
+    <tr><td>107, 134</td><td><a href="https://www.kaggle.com/datasets/kreeshrajani/3k-conversations-dataset-for-chatbot">3K Conversations Dataset for ChatBot</a><div class="ds-desc">This dataset is used for research or training of natural language processing (NLP) models. The dataset may include various types of conversations such as casual or formal discussions, interviews, customer service interactions, or social media conversations.</div></td><td><span class="tag">Conversational</span><span class="tag">AI &amp; Human generated</span><span class="tag">Relevant to Defiance</span></td><td>107: Done<br>134: Done</td></tr>
+    <tr><td>108, 135</td><td><a href="https://github.com/PolyAI-LDN/conversational-datasets">conversational-datasets</a><div class="ds-desc">For instance, the Reddit dataset is based on a raw database of 3.7 billion comments, but consists of 726 million examples</div></td><td></td><td></td></tr>
+    <tr><td>109, 126, 136</td><td><a href="https://github.com/google-research-datasets/Education-Dialogue-Dataset">Education-Dialogue-Dataset</a><div class="ds-desc">Education Dialogue (ED) contains conversations, generated by prompting Gemini Ultra. These are conversations between a teacher and a student, where the teacher is prompted with a specific topic to teach the student, and the student is prompted with their learning preferences.</div></td><td><span class="tag">Not relevant to any broad classes</span></td><td>109: Completed/Completed<br>126: Done<br>136: Done</td></tr>
+    <tr><td>110, 137</td><td><a href="https://github.com/nouhadziri/THRED/blob/master/README.md">Reddit Conversation Corpus</a><div class="ds-desc">A large dataset of conversations scraped from Reddit.</div></td><td></td><td></td></tr>
+    <tr><td>111, 138</td><td><a href="https://github.com/gordonwoodhull/enron-threads">enron-threads</a><div class="ds-desc">focused on extracting chains of email senders from the Enron corpus.</div></td><td></td><td></td></tr>
+    <tr><td>112, 139</td><td><a href="https://huggingface.co/datasets/ISTA-DASLab/Panza-emails">Panza-emails</a><div class="ds-desc">This dataset contains collections of emails of three authentic users (david, isabel, and marcus), with personal information (names, places, etc.) replaced by other ones for donor privacy.</div></td><td></td><td>112: Completed/Completed</td></tr>
+    <tr><td>113, 140</td><td><a href="https://huggingface.co/datasets/argilla/FinePersonas-Conversations-Email-Summaries">FinePersonas-Conversations-Email-Summaries</a><div class="ds-desc">This dataset contains summaries of emails from the dataset argilla/FinePersonas-Synthetic-Email-Conversations. This dataset exploded the conversations from the original dataset and generated for each email a maximum brevity summary (one sentence) and a more extended summary (at most 3 sentences)</div></td><td></td><td>113: Pending/Completed</td></tr>
+    <tr><td>114, 141</td><td><a href="https://huggingface.co/datasets/xprilion/email-summary-dataset">email-summary-dataset</a></td><td></td><td>114: Completed</td></tr>
+    <tr><td>115, 142</td><td><a href="https://huggingface.co/datasets/jihyoung/ConversationChronicles">ConversationChronicles</a><div class="ds-desc">Conversation Chronicles, a new high-quality 1M multi-session dataset that includes more various time intervals and fine-grained speaker relationships!</div></td><td></td><td>115: Done</td></tr>
+    <tr><td>116</td><td><a href="https://github.com/budzianowski/multiwoz">MultiWOZ</a><div class="ds-desc">Multi-Domain Wizard-of-Oz dataset (MultiWOZ), a fully-labeled collection of human-human written conversations spanning over multiple domains and topics. At a size of 10k dialogues, it is at least one order of magnitude larger than all previous annotated task-oriented corpora.</div></td><td></td><td></td></tr>
+    <tr><td>117</td><td><a href="https://convokit.cornell.edu/documentation/subreddit.html">Reddit Corpus (by subreddit)</a><div class="ds-desc">A collection of Corpuses of Reddit data built from Pushshift.io Reddit Corpus. Each Corpus contains posts and comments from an individual subreddit from its inception until Oct 2018.</div></td><td></td><td></td></tr>
+    <tr><td>118</td><td><a href="https://huggingface.co/datasets/mnazari/harvard-mather-house-emails">harvard-mather-house-emails</a></td><td><span class="tag">Non-Conversational</span><span class="tag">Human Generated</span><span class="tag">Not relevant to any broad classes</span></td><td>118: Done/pending</td></tr>
+    <tr><td>119</td><td><a href="https://huggingface.co/datasets/corbt/enron_emails_sample_questions">enron_emails_sample_questions</a><div class="ds-desc">​The dataset titled Email-Management-System-Prompts on Hugging Face comprises a collection of system prompts aimed at enhancing email productivity, communication, and management.</div></td><td></td><td>119: Done</td></tr>
+    <tr><td>120</td><td><a href="https://huggingface.co/datasets/suyash-kiet/email_dataset_v1">email_dataset_v1</a></td><td></td><td>120: Done</td></tr>
+    <tr><td>121</td><td><a href="https://huggingface.co/datasets/frankdarkluo/DailyDialog">DailyDialog</a><div class="ds-desc">The DailyDialog dataset is a meticulously curated collection of multi-turn dialogues that aims to accurately represent the way we communicate in our daily lives.</div></td><td><span class="tag">Conversational</span><span class="tag">Human Generated</span><span class="tag">Relevant to Exhaustion</span></td><td>121: Done</td></tr>
+    <tr><td>122</td><td><a href="https://github.com/rkadlec/ubuntu-ranking-dataset-creator">ubuntu-ranking-dataset-creator</a><div class="ds-desc">It is separated into 3 columns: the context of the conversation, the candidate response or &#x27;utterance&#x27;, and a flag or &#x27;label&#x27; (= 0 or 1)</div></td><td></td><td></td></tr>
+    <tr><td>123</td><td><a href="https://huggingface.co/datasets/cornell-movie-dialog/cornell_movie_dialog">cornell_movie_dialog</a><div class="ds-desc">his corpus contains a large metadata-rich collection of fictional conversations extracted from raw movie scripts:  220,579 conversational exchanges between 10,292 pairs of movie characters involves 9,035 characters from 617 movies in total 304,713 utterances</div></td><td></td><td></td></tr>
+    <tr><td>124</td><td><a href="https://huggingface.co/datasets/HumanLLMs/Human-Like-DPO-Dataset">Human-Like-DPO-Dataset</a><div class="ds-desc">This dataset was created as part of research aimed at improving conversational fluency and engagement in large language models. It is suitable for formats like Direct Preference Optimization (DPO) to guide models toward generating more human-like responses.  The dataset includes 10,884 samples across 256 topics, including: Technology Daily Life Science History Arts</div></td><td></td><td>124: Completed</td></tr>
+    <tr><td>125</td><td><a href="https://github.com/alexa/Topical-Chat">Topical-Chat</a><div class="ds-desc">Topical-Chat, a knowledge-grounded human-human conversation dataset where the underlying knowledge spans 8 broad topics and conversation partners don’t have explicitly defined roles.</div></td><td></td><td>125: Done</td></tr>
+    <tr><td>127</td><td><a href="https://huggingface.co/datasets/goten9004/ConversationalSentimentDataset">ConversationalSentimentDataset</a><div class="ds-desc">Contains short dialogues labeled with overall sentiment (positive, negative, neutral).</div></td><td></td><td>127: Done/Done</td></tr>
+    <tr><td>143</td><td>Email/SMS Spam Classifier <span class="nolink">(no link in sheet)</span><div class="ds-desc">This model is an advanced machine learning-based spam detection system designed to classify email and SMS messages as spam or ham (non-spam). It employs a deep learning architecture with NLP techniques to accurately identify spam messages.</div></td><td></td><td></td></tr>
+    <tr><td>144</td><td>The Enron Email Dataset <span class="nolink">(no link in sheet)</span><div class="ds-desc">The Enron email dataset contains approximately 500,000 emails generated by employees of the Enron Corporation. It was obtained by the Federal Energy Regulatory Commission during its investigation of Enron&#x27;s collapse.</div></td><td></td><td></td></tr>
+    <tr><td>145</td><td>Customer Support on Twitter <span class="nolink">(no link in sheet)</span><div class="ds-desc">Natural language remains the densest encoding of human experience we have, and innovation in NLP has accelerated to power understanding of that data, but the datasets driving this innovation don&#x27;t match the real language in use today.</div></td><td></td><td></td></tr>
+    <tr><td>146</td><td>MichaelR207/enron_corpus_0922 <span class="nolink">(no link in sheet)</span></td><td></td><td></td></tr>
+    <tr><td>147</td><td>FinePersonas-Email-Conversations <span class="nolink">(no link in sheet)</span><div class="ds-desc">This dataset contains a pipeline.yaml which can be used to reproduce the pipeline that generated it in distilabel using the distilabel CLI:</div></td><td></td><td></td></tr>
+    <tr><td>149</td><td>sales-conversations <span class="nolink">(no link in sheet)</span><div class="ds-desc">The conversations have a customer and a salesman which appear always in changing order. customer, salesman, customer, salesman, etc. The customer always starts the conversation Who ends the conversation is not defined.</div></td><td></td><td></td></tr>
+    <tr><td>150</td><td>Customer Complaints Sentiment and Priority Dataset <span class="nolink">(no link in sheet)</span><div class="ds-desc">These are real-world complaints regarding financial products and services. Each complaint has been labeled with its respective product category, sentiment, and priority level to facilitate the analysis of customer feedback.</div></td><td></td><td></td></tr>
+    <tr><td>151</td><td>customers-complaints <span class="nolink">(no link in sheet)</span><div class="ds-desc">Dataset Card for &quot;customers-complaints&quot;</div></td><td></td><td></td></tr>
+  </table></div>
+</section>
+
+<footer>DE Intern Task Bank · stages 0–6 · generated 2026-10-13</footer>
+</main>
+</div>
+</body>
+</html>

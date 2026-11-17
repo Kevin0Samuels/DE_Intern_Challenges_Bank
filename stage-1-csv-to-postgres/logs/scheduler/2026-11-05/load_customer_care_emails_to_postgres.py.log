@@ -1,0 +1,147 @@
+[2026-11-05T13:54:55.310+0000] {processor.py:161} INFO - Started process (PID=184) to work on /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:54:55.311+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/load_customer_care_emails_to_postgres.py for tasks to queue
+[2026-11-05T13:54:55.314+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:54:55.313+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:54:56.890+0000] {processor.py:840} INFO - DAG(s) 'load_customer_care_emails_to_postgres' retrieved from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:54:57.012+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:54:57.012+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-11-05T13:54:57.048+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:54:57.048+0000] {dag.py:3823} INFO - Setting next_dagrun for load_customer_care_emails_to_postgres to None, run_after=None
+[2026-11-05T13:54:57.069+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/load_customer_care_emails_to_postgres.py took 1.767 seconds
+[2026-11-05T13:55:27.497+0000] {processor.py:161} INFO - Started process (PID=211) to work on /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:55:27.499+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/load_customer_care_emails_to_postgres.py for tasks to queue
+[2026-11-05T13:55:27.501+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:55:27.500+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:55:28.064+0000] {processor.py:840} INFO - DAG(s) 'load_customer_care_emails_to_postgres' retrieved from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:55:28.146+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:55:28.144+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-11-05T13:55:28.169+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:55:28.168+0000] {dag.py:3823} INFO - Setting next_dagrun for load_customer_care_emails_to_postgres to None, run_after=None
+[2026-11-05T13:55:28.189+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/load_customer_care_emails_to_postgres.py took 0.700 seconds
+[2026-11-05T13:55:58.588+0000] {processor.py:161} INFO - Started process (PID=231) to work on /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:55:58.589+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/load_customer_care_emails_to_postgres.py for tasks to queue
+[2026-11-05T13:55:58.592+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:55:58.591+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:55:58.816+0000] {processor.py:840} INFO - DAG(s) 'load_customer_care_emails_to_postgres' retrieved from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:55:58.841+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:55:58.841+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-11-05T13:55:58.849+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:55:58.849+0000] {dag.py:3823} INFO - Setting next_dagrun for load_customer_care_emails_to_postgres to None, run_after=None
+[2026-11-05T13:55:58.861+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/load_customer_care_emails_to_postgres.py took 0.284 seconds
+[2026-11-05T13:56:29.064+0000] {processor.py:161} INFO - Started process (PID=258) to work on /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:56:29.066+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/load_customer_care_emails_to_postgres.py for tasks to queue
+[2026-11-05T13:56:29.067+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:56:29.066+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:56:29.271+0000] {processor.py:840} INFO - DAG(s) 'load_customer_care_emails_to_postgres' retrieved from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:56:29.294+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:56:29.294+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-11-05T13:56:29.306+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:56:29.306+0000] {dag.py:3823} INFO - Setting next_dagrun for load_customer_care_emails_to_postgres to None, run_after=None
+[2026-11-05T13:56:29.317+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/load_customer_care_emails_to_postgres.py took 0.261 seconds
+[2026-11-05T13:56:59.391+0000] {processor.py:161} INFO - Started process (PID=286) to work on /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:56:59.393+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/load_customer_care_emails_to_postgres.py for tasks to queue
+[2026-11-05T13:56:59.394+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:56:59.393+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:56:59.640+0000] {processor.py:840} INFO - DAG(s) 'load_customer_care_emails_to_postgres' retrieved from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:56:59.661+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:56:59.661+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-11-05T13:56:59.675+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:56:59.674+0000] {dag.py:3823} INFO - Setting next_dagrun for load_customer_care_emails_to_postgres to None, run_after=None
+[2026-11-05T13:56:59.686+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/load_customer_care_emails_to_postgres.py took 0.303 seconds
+[2026-11-05T13:57:29.865+0000] {processor.py:161} INFO - Started process (PID=313) to work on /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:57:29.866+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/load_customer_care_emails_to_postgres.py for tasks to queue
+[2026-11-05T13:57:29.867+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:57:29.867+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:57:30.058+0000] {processor.py:840} INFO - DAG(s) 'load_customer_care_emails_to_postgres' retrieved from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:57:30.082+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:57:30.082+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-11-05T13:57:30.090+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:57:30.090+0000] {dag.py:3823} INFO - Setting next_dagrun for load_customer_care_emails_to_postgres to None, run_after=None
+[2026-11-05T13:57:30.101+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/load_customer_care_emails_to_postgres.py took 0.240 seconds
+[2026-11-05T13:58:00.226+0000] {processor.py:161} INFO - Started process (PID=333) to work on /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:58:00.227+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/load_customer_care_emails_to_postgres.py for tasks to queue
+[2026-11-05T13:58:00.229+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:58:00.228+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:58:00.446+0000] {processor.py:840} INFO - DAG(s) 'load_customer_care_emails_to_postgres' retrieved from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:58:00.469+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:58:00.469+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-11-05T13:58:00.480+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:58:00.480+0000] {dag.py:3823} INFO - Setting next_dagrun for load_customer_care_emails_to_postgres to None, run_after=None
+[2026-11-05T13:58:00.490+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/load_customer_care_emails_to_postgres.py took 0.268 seconds
+[2026-11-05T13:58:30.701+0000] {processor.py:161} INFO - Started process (PID=360) to work on /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:58:30.702+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/load_customer_care_emails_to_postgres.py for tasks to queue
+[2026-11-05T13:58:30.703+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:58:30.702+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:58:30.948+0000] {processor.py:840} INFO - DAG(s) 'load_customer_care_emails_to_postgres' retrieved from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:58:30.975+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:58:30.975+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-11-05T13:58:30.983+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:58:30.983+0000] {dag.py:3823} INFO - Setting next_dagrun for load_customer_care_emails_to_postgres to None, run_after=None
+[2026-11-05T13:58:30.993+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/load_customer_care_emails_to_postgres.py took 0.296 seconds
+[2026-11-05T13:59:01.278+0000] {processor.py:161} INFO - Started process (PID=381) to work on /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:59:01.280+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/load_customer_care_emails_to_postgres.py for tasks to queue
+[2026-11-05T13:59:01.282+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:59:01.281+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:59:01.601+0000] {processor.py:840} INFO - DAG(s) 'load_customer_care_emails_to_postgres' retrieved from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:59:01.618+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:59:01.617+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-11-05T13:59:01.628+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:59:01.628+0000] {dag.py:3823} INFO - Setting next_dagrun for load_customer_care_emails_to_postgres to None, run_after=None
+[2026-11-05T13:59:01.637+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/load_customer_care_emails_to_postgres.py took 0.369 seconds
+[2026-11-05T13:59:31.928+0000] {processor.py:161} INFO - Started process (PID=408) to work on /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:59:31.935+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/load_customer_care_emails_to_postgres.py for tasks to queue
+[2026-11-05T13:59:31.938+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:59:31.937+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:59:32.165+0000] {processor.py:840} INFO - DAG(s) 'load_customer_care_emails_to_postgres' retrieved from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T13:59:32.270+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:59:32.269+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-11-05T13:59:32.275+0000] {logging_mixin.py:188} INFO - [2026-11-05T13:59:32.275+0000] {dag.py:3823} INFO - Setting next_dagrun for load_customer_care_emails_to_postgres to None, run_after=None
+[2026-11-05T13:59:32.284+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/load_customer_care_emails_to_postgres.py took 0.368 seconds
+[2026-11-05T14:00:02.595+0000] {processor.py:161} INFO - Started process (PID=444) to work on /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:00:02.596+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/load_customer_care_emails_to_postgres.py for tasks to queue
+[2026-11-05T14:00:02.598+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:00:02.597+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:00:02.797+0000] {processor.py:840} INFO - DAG(s) 'load_customer_care_emails_to_postgres' retrieved from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:00:02.816+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:00:02.815+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-11-05T14:00:02.823+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:00:02.823+0000] {dag.py:3823} INFO - Setting next_dagrun for load_customer_care_emails_to_postgres to None, run_after=None
+[2026-11-05T14:00:02.832+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/load_customer_care_emails_to_postgres.py took 0.240 seconds
+[2026-11-05T14:00:32.905+0000] {processor.py:161} INFO - Started process (PID=478) to work on /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:00:32.907+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/load_customer_care_emails_to_postgres.py for tasks to queue
+[2026-11-05T14:00:32.907+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:00:32.907+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:00:33.142+0000] {processor.py:840} INFO - DAG(s) 'load_customer_care_emails_to_postgres' retrieved from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:00:33.166+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:00:33.166+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-11-05T14:00:33.178+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:00:33.178+0000] {dag.py:3823} INFO - Setting next_dagrun for load_customer_care_emails_to_postgres to None, run_after=None
+[2026-11-05T14:00:33.194+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/load_customer_care_emails_to_postgres.py took 0.292 seconds
+[2026-11-05T14:01:03.690+0000] {processor.py:161} INFO - Started process (PID=498) to work on /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:01:03.692+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/load_customer_care_emails_to_postgres.py for tasks to queue
+[2026-11-05T14:01:03.693+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:01:03.692+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:01:03.914+0000] {processor.py:840} INFO - DAG(s) 'load_customer_care_emails_to_postgres' retrieved from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:01:03.934+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:01:03.934+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-11-05T14:01:03.943+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:01:03.943+0000] {dag.py:3823} INFO - Setting next_dagrun for load_customer_care_emails_to_postgres to None, run_after=None
+[2026-11-05T14:01:03.952+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/load_customer_care_emails_to_postgres.py took 0.266 seconds
+[2026-11-05T14:01:34.081+0000] {processor.py:161} INFO - Started process (PID=525) to work on /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:01:34.083+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/load_customer_care_emails_to_postgres.py for tasks to queue
+[2026-11-05T14:01:34.086+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:01:34.084+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:01:34.354+0000] {processor.py:840} INFO - DAG(s) 'load_customer_care_emails_to_postgres' retrieved from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:01:34.389+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:01:34.389+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-11-05T14:01:34.399+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:01:34.399+0000] {dag.py:3823} INFO - Setting next_dagrun for load_customer_care_emails_to_postgres to None, run_after=None
+[2026-11-05T14:01:34.415+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/load_customer_care_emails_to_postgres.py took 0.340 seconds
+[2026-11-05T14:02:04.505+0000] {processor.py:161} INFO - Started process (PID=545) to work on /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:02:04.507+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/load_customer_care_emails_to_postgres.py for tasks to queue
+[2026-11-05T14:02:04.510+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:02:04.508+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:02:04.768+0000] {processor.py:840} INFO - DAG(s) 'load_customer_care_emails_to_postgres' retrieved from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:02:04.797+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:02:04.797+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-11-05T14:02:04.809+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:02:04.809+0000] {dag.py:3823} INFO - Setting next_dagrun for load_customer_care_emails_to_postgres to None, run_after=None
+[2026-11-05T14:02:04.820+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/load_customer_care_emails_to_postgres.py took 0.319 seconds
+[2026-11-05T14:02:34.923+0000] {processor.py:161} INFO - Started process (PID=572) to work on /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:02:34.924+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/load_customer_care_emails_to_postgres.py for tasks to queue
+[2026-11-05T14:02:34.925+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:02:34.925+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:02:35.193+0000] {processor.py:840} INFO - DAG(s) 'load_customer_care_emails_to_postgres' retrieved from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:02:35.230+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:02:35.229+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-11-05T14:02:35.250+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:02:35.250+0000] {dag.py:3823} INFO - Setting next_dagrun for load_customer_care_emails_to_postgres to None, run_after=None
+[2026-11-05T14:02:35.268+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/load_customer_care_emails_to_postgres.py took 0.352 seconds
+[2026-11-05T14:03:05.397+0000] {processor.py:161} INFO - Started process (PID=599) to work on /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:03:05.399+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/load_customer_care_emails_to_postgres.py for tasks to queue
+[2026-11-05T14:03:05.400+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:03:05.399+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:03:05.605+0000] {processor.py:840} INFO - DAG(s) 'load_customer_care_emails_to_postgres' retrieved from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:03:05.627+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:03:05.627+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-11-05T14:03:05.634+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:03:05.634+0000] {dag.py:3823} INFO - Setting next_dagrun for load_customer_care_emails_to_postgres to None, run_after=None
+[2026-11-05T14:03:05.645+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/load_customer_care_emails_to_postgres.py took 0.254 seconds
+[2026-11-05T14:03:35.826+0000] {processor.py:161} INFO - Started process (PID=619) to work on /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:03:35.828+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/load_customer_care_emails_to_postgres.py for tasks to queue
+[2026-11-05T14:03:35.829+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:03:35.829+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:03:36.065+0000] {processor.py:840} INFO - DAG(s) 'load_customer_care_emails_to_postgres' retrieved from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:03:36.095+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:03:36.095+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-11-05T14:03:36.106+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:03:36.106+0000] {dag.py:3823} INFO - Setting next_dagrun for load_customer_care_emails_to_postgres to None, run_after=None
+[2026-11-05T14:03:36.123+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/load_customer_care_emails_to_postgres.py took 0.302 seconds
+[2026-11-05T14:04:06.175+0000] {processor.py:161} INFO - Started process (PID=646) to work on /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:04:06.177+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/load_customer_care_emails_to_postgres.py for tasks to queue
+[2026-11-05T14:04:06.178+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:04:06.177+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:04:06.403+0000] {processor.py:840} INFO - DAG(s) 'load_customer_care_emails_to_postgres' retrieved from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:04:06.427+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:04:06.427+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-11-05T14:04:06.437+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:04:06.437+0000] {dag.py:3823} INFO - Setting next_dagrun for load_customer_care_emails_to_postgres to None, run_after=None
+[2026-11-05T14:04:06.448+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/load_customer_care_emails_to_postgres.py took 0.279 seconds
+[2026-11-05T14:04:36.684+0000] {processor.py:161} INFO - Started process (PID=672) to work on /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:04:36.687+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/load_customer_care_emails_to_postgres.py for tasks to queue
+[2026-11-05T14:04:36.689+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:04:36.689+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:04:36.873+0000] {processor.py:840} INFO - DAG(s) 'load_customer_care_emails_to_postgres' retrieved from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:04:36.892+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:04:36.892+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-11-05T14:04:36.898+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:04:36.898+0000] {dag.py:3823} INFO - Setting next_dagrun for load_customer_care_emails_to_postgres to None, run_after=None
+[2026-11-05T14:04:36.907+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/load_customer_care_emails_to_postgres.py took 0.228 seconds
+[2026-11-05T14:05:07.063+0000] {processor.py:161} INFO - Started process (PID=692) to work on /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:05:07.065+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/load_customer_care_emails_to_postgres.py for tasks to queue
+[2026-11-05T14:05:07.066+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:05:07.065+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:05:07.312+0000] {processor.py:840} INFO - DAG(s) 'load_customer_care_emails_to_postgres' retrieved from /opt/airflow/dags/load_customer_care_emails_to_postgres.py
+[2026-11-05T14:05:07.346+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:05:07.345+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-11-05T14:05:07.355+0000] {logging_mixin.py:188} INFO - [2026-11-05T14:05:07.355+0000] {dag.py:3823} INFO - Setting next_dagrun for load_customer_care_emails_to_postgres to None, run_after=None
+[2026-11-05T14:05:07.365+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/load_customer_care_emails_to_postgres.py took 0.307 seconds

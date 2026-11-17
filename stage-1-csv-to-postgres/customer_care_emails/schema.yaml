@@ -1,0 +1,45 @@
+dataset: customer_care_emails
+target_table: raw_customer_care_emails
+primary_key:
+  - thread_id
+columns:
+  - name: thread_id
+    type: string
+    nullable: false
+  - name: subject
+    type: string
+    nullable: true
+  - name: sender
+    type: string
+    nullable: false
+  - name: receiver
+    type: string
+    nullable: false
+  - name: timestamp
+    type: timestamp
+    nullable: false
+  - name: message_body
+    type: string
+    nullable: true
+  - name: email_types
+    type: string
+    nullable: true
+  - name: email_status
+    type: string
+    nullable: true
+  - name: email_criticality
+    type: string
+    nullable: true
+  - name: product_types
+    type: string
+    nullable: true
+  - name: agent_effectivity
+    type: string
+    nullable: true
+  - name: agent_efficiency
+    type: string
+    nullable: true
+  - name: customer_satisfaction
+    type: float
+    nullable: true
+    

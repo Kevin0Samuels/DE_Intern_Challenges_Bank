@@ -1,0 +1,8 @@
+dataset_name: customer_care_emails
+description: "Simulated customer care email threads annotated with metadata, sentiments, and resolution statuses"
+source: "https://huggingface.co/datasets/rtweera/customer_care_emails"
+owner: "Data Engineering Intern"
+appendix_code: 102
+status: "Completed/Completed"
+format: "csv"
+target_table: "raw_customer_care_emails"

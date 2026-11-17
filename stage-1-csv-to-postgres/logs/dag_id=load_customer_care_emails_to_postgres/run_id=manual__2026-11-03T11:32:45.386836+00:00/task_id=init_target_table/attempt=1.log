@@ -1,0 +1,31 @@
+[2026-11-03T11:32:46.865+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: load_customer_care_emails_to_postgres.init_target_table manual__2026-11-03T11:32:45.386836+00:00 [queued]>
+[2026-11-03T11:32:46.869+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: load_customer_care_emails_to_postgres.init_target_table manual__2026-11-03T11:32:45.386836+00:00 [queued]>
+[2026-11-03T11:32:46.869+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-11-03T11:32:46.875+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): init_target_table> on 2026-11-03 11:32:45.386836+00:00
+[2026-11-03T11:32:46.879+0000] {standard_task_runner.py:60} INFO - Started process 791 to run task
+[2026-11-03T11:32:46.883+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'load_customer_care_emails_to_postgres', 'init_target_table', 'manual__2026-11-03T11:32:45.386836+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/load_customer_care_emails_to_postgres.py', '--cfg-path', '/tmp/tmpkfk8rd2g']
+[2026-11-03T11:32:46.887+0000] {standard_task_runner.py:88} INFO - Job 8: Subtask init_target_table
+[2026-11-03T11:32:46.938+0000] {task_command.py:423} INFO - Running <TaskInstance: load_customer_care_emails_to_postgres.init_target_table manual__2026-11-03T11:32:45.386836+00:00 [running]> on host 7a971337245f
+[2026-11-03T11:32:47.007+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='load_customer_care_emails_to_postgres' AIRFLOW_CTX_TASK_ID='init_target_table' AIRFLOW_CTX_EXECUTION_DATE='2026-11-03T11:32:45.386836+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-11-03T11:32:45.386836+00:00'
+[2026-11-03T11:32:47.016+0000] {base.py:83} INFO - Using connection ID 'postgres_warehouse' for task execution.
+[2026-11-03T11:32:47.021+0000] {sql.py:450} INFO - Running statement: CREATE TABLE IF NOT EXISTS raw_customer_care_emails (
+    thread_id VARCHAR(64) PRIMARY KEY,
+    subject VARCHAR(255),
+    sender VARCHAR(255) NOT NULL,
+    receiver VARCHAR(255) NOT NULL,
+    timestamp TIMESTAMP WITH TIME ZONE NOT NULL,
+    message_body TEXT,
+    email_types VARCHAR(100),
+    email_status VARCHAR(50),
+    email_criticality VARCHAR(50),
+    product_types VARCHAR(100),
+    agent_effectivity VARCHAR(50),
+    agent_efficiency VARCHAR(50),
+    customer_satisfaction NUMERIC(4, 2),
+    ingested_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);, parameters: None
+[2026-11-03T11:32:47.021+0000] {logging_mixin.py:188} INFO - Target PostgreSQL table schema initialized successfully.
+[2026-11-03T11:32:47.021+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-11-03T11:32:47.027+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=load_customer_care_emails_to_postgres, task_id=init_target_table, execution_date=20261103T113245, start_date=20261103T113246, end_date=20261103T113247
+[2026-11-03T11:32:47.059+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-11-03T11:32:47.087+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
